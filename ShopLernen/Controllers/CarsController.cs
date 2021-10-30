@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopLernen.Data.Interfaces;
+using ShopLernen.ViewModels;
 
 namespace ShopLernen.Controllers
 {
@@ -16,8 +17,14 @@ namespace ShopLernen.Controllers
 
         public ViewResult List()
         {
-            var cars = _allCars.Cars;
-            return View(cars);
+            ViewBag.Title = "Страница с автомобилями";
+
+            CarsListViewModel carsListViewModel = new CarsListViewModel
+            {
+                AllCars = _allCars.Cars, CurrentCategory = "Автомобили"
+            };
+
+            return View(carsListViewModel);
         }
     }
 }
