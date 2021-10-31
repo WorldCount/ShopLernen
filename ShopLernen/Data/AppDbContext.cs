@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopLernen.Data.Models;
 
 namespace ShopLernen.Data
@@ -11,6 +7,7 @@ namespace ShopLernen.Data
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShopCartItem> ShopCartItems { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
