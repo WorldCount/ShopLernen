@@ -36,6 +36,8 @@ namespace ShopLernen
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
+            DbObjects.Initial(app);
         }
     }
 }
